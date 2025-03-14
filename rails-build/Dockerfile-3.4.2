@@ -1,0 +1,15 @@
+FROM ruby:3.4.1-slim-bookworm
+
+RUN apt-get update -q \
+    && apt-get install --assume-yes -q --no-install-recommends \
+      curl build-essential git gpg libyaml-dev libffi-dev libpq-dev software-properties-common rsync \
+    && curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | tee /usr/share/keyrings/yarnkey.gpg >/dev/null \
+    && echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt-get update -q \
+    && apt-get install --assume-yes -q --no-install-recommends shared-mime-info yarn npm nodejs \
+    && apt-get autoremove --assume-yes \
+    && rm -rf /var/lib/apt/lists \
+    && rm -fr /var/cache/apt
+
+# log the image build date
+RUN echo "rails-build="$(date +"%Y-%m-%d %H:%M %Z") >> /DOCKER_IMAGE_BUILD_HISTORY
