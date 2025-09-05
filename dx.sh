@@ -16,14 +16,14 @@ function help () {
   echo "  images                    - list the available images"
   echo
   echo "example (test and release): "
-  echo "1. install latest packages for rails-dev 3.4.4 image"
-  echo "   > freshen rails-dev 3.4.4"
-  echo "2. after testing, promote latest image to new 3.4.4 tag"
-  echo "   > release rails-dev 3.4.4"
+  echo "1. install latest packages for rails-dev 3.4.5 image"
+  echo "   > freshen rails-dev 3.4.5"
+  echo "2. after testing, promote latest image to new 3.4.5 tag"
+  echo "   > release rails-dev 3.4.5"
   echo
   echo "example (full send, skips testing): "
-  echo "1. build, tag and deploy an updated image rails-dev 3.4.4 image"
-  echo "   > update rails-dev 3.4.4"
+  echo "1. build, tag and deploy an updated image rails-dev 3.4.5 image"
+  echo "   > update rails-dev 3.4.5"
   echo
 }
 
